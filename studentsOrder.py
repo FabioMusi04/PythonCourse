@@ -37,22 +37,27 @@ studenti = [
 ]
 
 print(studenti)
+def ordina_cognome_nome(studenti):
+    return sorted(studenti, key=lambda x: (x["cognome"], x["nome"]))
 
-def ordina_cognome_nome(studente):
-    for s in studente:
-        studente.sort(key=lambda x: (x["cognome"], x["nome"]))
-        
-        def sort_by_cognome_nome(x):
-            return x["cognome"], x["nome"]
-        studente.sort(key=sort_by_cognome_nome)
-    return studente
-def ordina_nome_cognome(studente):
-    for s in studente:
-        studente.sort(key=lambda x: (x["nome"], x["cognome"]), reverse=True)
-        
-        def sort_by_nome_cognome(x):
-            return x["nome"], x["cognome"]
-        studente.sort(key=sort_by_nome_cognome, reverse=True)
-    return studente
+def ordina_nome_cognome(studenti):
+    return sorted(studenti, key=lambda x: (x["nome"], x["cognome"]), reverse=True)
+
+def ordina_cognome_nome_without_lambda(studenti):
+    def key(x):
+        return x["cognome"], x["nome"]
+    return sorted(studenti, key=key, reverse=True)
+
+def ordina_nome_cognome_without_lambda(studenti):
+    def key(x):
+        return x["nome"], x["cognome"]
+    return sorted(studenti, key=key, reverse=True)
+
 print(ordina_cognome_nome(studenti))
+print("-" * 50)
 print(ordina_nome_cognome(studenti))
+print("-" * 50)
+print(ordina_cognome_nome_without_lambda(studenti))
+print("-" * 50)
+print(ordina_nome_cognome_without_lambda(studenti))
+print("-" * 50)
