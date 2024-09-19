@@ -46,7 +46,7 @@ def ordina_nome_cognome(studenti):
 def ordina_cognome_nome_without_lambda(studenti):
     def key(x):
         return x["cognome"], x["nome"]
-    return sorted(studenti, key=key, reverse=True)
+    return sorted(studenti, key=key)
 
 def ordina_nome_cognome_without_lambda(studenti):
     def key(x):
