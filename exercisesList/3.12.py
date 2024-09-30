@@ -13,10 +13,10 @@ while True:
             print("Devi inserire un numero di 5 cifre")
             continue
         for i in range(0, n_len):
-            if i == 4 - i:
+            if i == (n_len - 1) - i:
                 break
             s = n // 10**i % 10
-            e = n // 10**(4-i) % 10
+            e = n // 10**(( n_len-1 ) -i) % 10
             if s != e:
                 print("Il numero non è palindromo")
                 break

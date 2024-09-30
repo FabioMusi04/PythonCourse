@@ -19,7 +19,6 @@ def isBinary(n):
             return False
     return True
         
-        
 
 while True:
     try:
